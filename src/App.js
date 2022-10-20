@@ -1,21 +1,23 @@
 import {
-  BrowserRouter as Router,
-  Switch,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
   Route,
-  Routes,
 } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/movie" element={<Detail />} />
+    </Route>
+  )
+);
+
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/movie" element={<Detail />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
