@@ -10,8 +10,8 @@ import Home from "./routes/Home";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<Home />} />
-      <Route path="/movie" element={<Detail />} />
+      <Route path="/React-movie/" element={<Home />} />
+      <Route path="/React-movie/movie" element={<Detail />} />
     </Route>
   )
 );
