@@ -1,23 +1,25 @@
 import {
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
+  BrowserRouter as Router,
+  Switch,
   Route,
+  Routes,
 } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route>
-      <Route path="/" element={<Home />} />
-      <Route path="/movie" element={<Detail />} />
-    </Route>
-  )
-);
-
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Router basename="process.env.PUBLIC_URL">
+      <Routes>
+        <Route path="/movie" element={<Detail />}>
+          <Detail />
+        </Route>
+        <Route path="/" element={<Home />}>
+          <Home />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
