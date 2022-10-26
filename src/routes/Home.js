@@ -20,11 +20,11 @@ function Home() {
 
   console.log(movies);
   return (
-    <div>
+    <div className={"movieWrap"}>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div>
+        <div className={"movieContainer"}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
