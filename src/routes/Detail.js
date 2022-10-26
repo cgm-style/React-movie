@@ -11,6 +11,7 @@ function Detail() {
   };
   useEffect(() => {
     getMovie();
+    b;
   }, []);
   return <h1>Detail</h1>;
 }
