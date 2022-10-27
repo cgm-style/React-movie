@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 
 function Movie({ id, coverImg, title, summary, genres }) {
   return (
-    <div
-      className={"movieItem"}
-      style={{ backgroundImage: `url(${coverImg})` }}
-    >
-      <h2>
-        <Link to={`/movie/${id}`}>{title}</Link>
-      </h2>
-      <p>{summary}</p>
-      <ul>
-        {genres.map((g) => (
-          <li>{g}</li>
-        ))}
-      </ul>
-    </div>
+    <Link to={`/movie/${id}`}>
+      <div
+        className={"movieItem"}
+        style={{ backgroundImage: `url(${coverImg})` }}
+      >
+        <h2>{title}</h2>
+        <p>{summary.slice(0, 250)}</p>
+        <ul>
+          {genres.map((g) => (
+            <li>{g}</li>
+          ))}
+        </ul>
+      </div>
+    </Link>
   );
 }
 

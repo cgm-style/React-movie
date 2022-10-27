@@ -1,17 +1,47 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Detail() {
+  const [loading, setLoading] = useState(true);
+  const [selectMovie, setSelectMovie] = useState([]);
   const { id } = useParams();
   const getMovie = async () => {
     const json = await (
-      await fetch(`https://yts.mx/api/v2/list_movies.json?movie_id=${id}`)
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.7&sort_by=year&movie_id=${id}`
+      )
     ).json();
-    console.log(json);
+    json.data.movies.map((item) => {
+      if (item.id == id) {
+        setSelectMovie(item);
+        return false;
+      }
+    });
+    setLoading(false);
   };
   useEffect(() => {
     getMovie();
   }, []);
-  return <h1>Detail</h1>;
+  return (
+    <div className={"detailWrap"}>
+      {loading ? (
+        <h1>loading</h1>
+      ) : (
+        <div key={selectMovie.id}>
+          <div>
+            <h1>{selectMovie.title}</h1>
+            <img
+              src={`${selectMovie.large_cover_image}`}
+              alt={`${selectMovie.summary}`}
+            />
+          </div>
+          <div>
+            <h2>{selectMovie.summary}</h2>
+          </div>
+          {console.log(selectMovie)}
+        </div>
+      )}
+    </div>
+  );
 }
 export default Detail;

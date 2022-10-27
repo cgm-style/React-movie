@@ -1,0 +1,70 @@
+$color: black
+
+*
+    margin: 0px
+    padding: 0px
+    list-style: none
+    text-decoration: none
+    color: $color
+
+.movieWrap
+    background: #4D0703
+    padding-top: 100px
+    .movieContainer
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        width: 90%
+        margin: 0 auto
+        background: #5C0500
+        text-align: center
+        .movieItem
+            width: 330px
+            height: 445px
+            background-size: cover
+            background-repeat: no-repeat
+            margin: 20px
+            padding-top: 50px
+            overflow: hidden
+            cursor: pointer
+            h2
+                color: white
+                margin-bottom: 20px
+            p,li
+                margin-bottom: 10px
+
+.movieItem
+    *
+        opacity: 0
+        transition: all 0.5s
+
+.movieItem:hover
+    *
+        opacity: 1
+.movieItem
+    a,p,li
+        color: white
+        text-shadow: 1px 1px 3px black
+
+.detailWrap
+    position: absolute
+    width: 100%
+    height: 100%
+
+.detailWrap
+    padding: 50px
+    box-sizing: border-box
+    background: #4D0703
+    *
+        color: #dfdfdf
+    >div
+        display: flex
+        div
+            h1
+                font-size: 4vh
+                line-height: 2.5em
+            &:last-child
+                padding :
+                    top: 100px
+                    left: 100px
+                    right: 100px
