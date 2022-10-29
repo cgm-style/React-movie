@@ -12,7 +12,7 @@ function Movie({ id, coverImg, title, summary, genres }) {
         <p>{summary.slice(0, 250)}</p>
         <ul>
           {genres.map((g) => (
-            <li>{g}</li>
+            <li key={g}>{g}</li>
           ))}
         </ul>
       </div>

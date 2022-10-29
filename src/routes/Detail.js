@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import Header from "../components/Header";
 import { useEffect, useState } from "react";
 
 function Detail() {
@@ -24,8 +25,9 @@ function Detail() {
   }, []);
   return (
     <div className={"detailWrap"}>
+      <Header />
       {loading ? (
-        <h1>loading</h1>
+        <h2>loading</h2>
       ) : (
         <div key={selectMovie.id}>
           <div>

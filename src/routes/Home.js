@@ -1,40 +1,65 @@
 import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import Header from "../components/Header";
+import Slide from "../components/Slide";
 
 function Home() {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const json = await (
+  const [highMovies, highSetMovies] = useState([]);
+  const [middleMovies, middleSetMovies] = useState([]);
+  const [lowMovies, lowSetMovies] = useState([]);
+  const [animeMovies, animeSetMovies] = useState([]);
+  const [fantasyMovies, fantasySetMovies] = useState([]);
+  const GetMovies = async () => {
+    const highjson = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.7&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year&limit=10`
       )
     ).json();
 
-    setMovies(json.data.movies);
+    const middlejson = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=7&sort_by=year&limit=10`
+      )
+    ).json();
+
+    const lowjson = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=5&sort_by=year&limit=10`
+      )
+    ).json();
+
+    const animejson = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.3&sort_by=year&limit=10&genre=animation`
+      )
+    ).json();
+
+    const fatasyjson = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year&genre=fantasy&limit=10`
+      )
+    ).json();
+
+    highSetMovies(highjson.data.movies);
+    middleSetMovies(middlejson.data.movies);
+    lowSetMovies(lowjson.data.movies);
+    animeSetMovies(animejson.data.movies);
+    fantasySetMovies(fatasyjson.data.movies);
+
     setLoading(false);
   };
+
   useEffect(() => {
-    getMovies();
+    GetMovies();
   }, []);
 
   return (
     <div className={"movieWrap"}>
+      <Header />
       {loading ? (
-        <h1>Loading...</h1>
+        <h2>Loading...</h2>
       ) : (
-        <div className={"movieContainer"}>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
-            />
-          ))}
-        </div>
+        <Slide slide={fantasyMovies} title={"highMovie"} />
       )}
     </div>
   );

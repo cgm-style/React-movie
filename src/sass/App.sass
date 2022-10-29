@@ -1,5 +1,11 @@
 $color: black
 
+body
+    background: #4D0703
+    position: absolute
+    width: 100%
+    height: 100%
+
 *
     margin: 0px
     padding: 0px
@@ -7,14 +13,24 @@ $color: black
     text-decoration: none
     color: $color
 
+.headerTitle
+    width: auto
+    margin: 50px
+.movieContainer
+    width: 1480px
+    margin: 0 auto
+    overflow: hidden
 .movieWrap
     background: #4D0703
-    padding-top: 100px
-    .movieContainer
+    padding-top: 50px
+    h2
+        text-align: center
+        color: white
+    .slideWrap
         display: flex
         justify-content: center
         flex-wrap: wrap
-        width: 90%
+        width: 3700px
         margin: 0 auto
         background: #5C0500
         text-align: center
@@ -27,12 +43,42 @@ $color: black
             padding-top: 50px
             overflow: hidden
             cursor: pointer
+            filter: brightness(0.5)
+            transition: all 0.5s
+            &::after
+                content: "hover me"
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+                color: white
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 2vw
+                font-weight: bold
+                background: rgba(48,157,95,0.93)
+                box-sizing: border-box
+                border: 2px solid
+                pointer-events: none
+                transition: all 0.5s
+                opacity: 1
+            &:hover
+                filter: brightness(1)
+                &::after
+                    opacity: 0
             h2
                 color: white
                 margin-bottom: 20px
             p,li
                 margin-bottom: 10px
 
+.movieCate
+    color: white
+    margin-bottom: 20px
+    font-size: 2vw
+    font-weight: bold
 .movieItem
     *
         opacity: 0
@@ -66,5 +112,9 @@ $color: black
             &:last-child
                 padding :
                     top: 100px
-                    left: 100px
-                    right: 100px
+                    left: 50px
+                    right: 50px
+.movieWrap
+    padding: 50px
+    box-sizing: border-box
+    background: #4D0703

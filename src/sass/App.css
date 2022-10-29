@@ -1,3 +1,10 @@
+body {
+  background: #4D0703;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -6,20 +13,35 @@
   color: black;
 }
 
+.headerTitle {
+  width: auto;
+  margin: 50px;
+}
+
+.movieContainer {
+  width: 1480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .movieWrap {
   background: #4D0703;
-  padding-top: 100px;
+  padding-top: 50px;
 }
-.movieWrap .movieContainer {
+.movieWrap h2 {
+  text-align: center;
+  color: white;
+}
+.movieWrap .slideWrap {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 90%;
+  width: 3700px;
   margin: 0 auto;
   background: #5C0500;
   text-align: center;
 }
-.movieWrap .movieContainer .movieItem {
+.movieWrap .slideWrap .movieItem {
   width: 330px;
   height: 445px;
   background-size: cover;
@@ -28,13 +50,48 @@
   padding-top: 50px;
   overflow: hidden;
   cursor: pointer;
+  filter: brightness(0.5);
+  transition: all 0.5s;
 }
-.movieWrap .movieContainer .movieItem h2 {
+.movieWrap .slideWrap .movieItem::after {
+  content: "hover me";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  font-weight: bold;
+  background: rgba(48, 157, 95, 0.93);
+  box-sizing: border-box;
+  border: 2px solid;
+  pointer-events: none;
+  transition: all 0.5s;
+  opacity: 1;
+}
+.movieWrap .slideWrap .movieItem:hover {
+  filter: brightness(1);
+}
+.movieWrap .slideWrap .movieItem:hover::after {
+  opacity: 0;
+}
+.movieWrap .slideWrap .movieItem h2 {
   color: white;
   margin-bottom: 20px;
 }
-.movieWrap .movieContainer .movieItem p, .movieWrap .movieContainer .movieItem li {
+.movieWrap .slideWrap .movieItem p, .movieWrap .slideWrap .movieItem li {
   margin-bottom: 10px;
+}
+
+.movieCate {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2vw;
+  font-weight: bold;
 }
 
 .movieItem * {
@@ -74,8 +131,14 @@
 }
 .detailWrap > div div:last-child {
   padding-top: 100px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.movieWrap {
+  padding: 50px;
+  box-sizing: border-box;
+  background: #4D0703;
 }
 
 /*# sourceMappingURL=App.css.map */
