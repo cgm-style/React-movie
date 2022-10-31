@@ -24,7 +24,7 @@ function Home() {
 
     const lowjson = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=5&sort_by=year&limit=10`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=3&sort_by=year&limit=10`
       )
     ).json();
 
@@ -36,7 +36,7 @@ function Home() {
 
     const fatasyjson = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year&genre=fantasy&limit=10`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=5&sort_by=year&genre=fantasy&limit=10`
       )
     ).json();
 
