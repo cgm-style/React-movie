@@ -57,9 +57,15 @@ function Home() {
     <div className={"movieWrap"}>
       <Header />
       {loading ? (
-        <h2>Loading...</h2>
+        <h2>Loading!~</h2>
       ) : (
-        <Slide slide={fantasyMovies} title={"highMovie"} />
+        <div className={`mainWrap`}>
+          <Slide slide={highMovies} title={"highMovies"} />
+          <Slide slide={middleMovies} title={"middleMovies"} />
+          <Slide slide={lowMovies} title={"lowMovies"} />
+          <Slide slide={animeMovies} title={"animeMovies"} />
+          <Slide slide={fantasyMovies} title={"fantasyMovies"} />
+        </div>
       )}
     </div>
   );

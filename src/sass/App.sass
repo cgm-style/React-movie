@@ -18,7 +18,7 @@ body
     margin: 50px
 .movieContainer
     width: 1480px
-    margin: 0 auto
+    margin: 60px auto
     overflow: hidden
 .movieWrap
     background: #4D0703
@@ -30,21 +30,25 @@ body
         display: flex
         justify-content: center
         flex-wrap: wrap
-        width: 3700px
+        width: 370*15px
         margin: 0 auto
         background: #5C0500
         text-align: center
+        transition: all 0.5s
+        transform: translateX(-3700px)
         .movieItem
             width: 330px
             height: 445px
             background-size: cover
             background-repeat: no-repeat
             margin: 20px
+            padding: 0 15px
             padding-top: 50px
             overflow: hidden
             cursor: pointer
-            filter: brightness(0.5)
+            filter: drop-shadow(3px 4px 6px black)
             transition: all 0.5s
+            box-sizing: border-box
             &::after
                 content: "hover me"
                 position: absolute
@@ -58,15 +62,39 @@ body
                 align-items: center
                 font-size: 2vw
                 font-weight: bold
-                background: rgba(48,157,95,0.93)
+                background: rgba(48,157,95,0.7)
                 box-sizing: border-box
                 border: 2px solid
                 pointer-events: none
                 transition: all 0.5s
                 opacity: 1
+                z-index: 2
+            &::before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+                color: white
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 2vw
+                font-weight: bold
+                background: transparent
+                box-sizing: border-box
+                border: 2px solid
+                pointer-events: none
+                transition: all 0.5s
+                opacity: 1
+                z-index: 3
+                border: 10px double white
             &:hover
                 filter: brightness(1)
                 &::after
+                    opacity: 0
+                &::before
                     opacity: 0
             h2
                 color: white
@@ -80,6 +108,7 @@ body
     font-size: 2vw
     font-weight: bold
 .movieItem
+
     *
         opacity: 0
         transition: all 0.5s
@@ -118,3 +147,22 @@ body
     padding: 50px
     box-sizing: border-box
     background: #4D0703
+
+.slideDot
+    position: absolute
+    width: 1550px
+    z-index: 3
+    font-size: 3vh
+    font-weight: bold
+    margin-top: -285px
+    margin-left: -35px
+    div
+        color: white
+        cursor: pointer
+        transition: all 0.5s
+        &:first-child
+            float: left
+        &:last-child
+            float: right
+        &:hover
+            transform: scale(1.5)
