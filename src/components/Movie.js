@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 function Movie({ id, coverImg, title, summary, genres }) {
   return (
     <Link to={`/movie/${id}`}>
-      <div
-        className={"movieItem"}
-        style={{ backgroundImage: `url(${coverImg})` }}
-      >
+      <div className={"movieItem"}>
+        <div style={{ backgroundImage: `url(${coverImg})` }}></div>
         <h2>{title}</h2>
         <p>{summary.slice(0, 250)}</p>
         <ul>

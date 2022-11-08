@@ -30,17 +30,15 @@ body
         display: flex
         justify-content: center
         flex-wrap: wrap
-        width: 370*15px
+        width: 370*10px
         margin: 0 auto
         background: #5C0500
         text-align: center
         transition: all 0.5s
-        transform: translateX(-3700px)
+        transform: translateX(0px)
         .movieItem
             width: 330px
-            height: 445px
-            background-size: cover
-            background-repeat: no-repeat
+            height: 495px
             margin: 20px
             padding: 0 15px
             padding-top: 50px
@@ -49,8 +47,17 @@ body
             filter: drop-shadow(3px 4px 6px black)
             transition: all 0.5s
             box-sizing: border-box
+            div
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+                background-size: cover
+                background-repeat: no-repeat
+                transition: all 0.5s
+                filter: brightness(1)
             &::after
-                content: "hover me"
                 position: absolute
                 width: 100%
                 height: 100%
@@ -62,7 +69,6 @@ body
                 align-items: center
                 font-size: 2vw
                 font-weight: bold
-                background: rgba(48,157,95,0.7)
                 box-sizing: border-box
                 border: 2px solid
                 pointer-events: none
@@ -96,6 +102,8 @@ body
                     opacity: 0
                 &::before
                     opacity: 0
+                div
+                    filter: brightness(0.5)
             h2
                 color: white
                 margin-bottom: 20px
@@ -108,13 +116,13 @@ body
     font-size: 2vw
     font-weight: bold
 .movieItem
-
-    *
+    p,h2,li
         opacity: 0
         transition: all 0.5s
-
+        z-index: 2
+        position: relative
 .movieItem:hover
-    *
+    p,h2,li
         opacity: 1
 .movieItem
     a,p,li
