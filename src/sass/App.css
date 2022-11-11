@@ -201,6 +201,9 @@ body {
   padding: 200px 100px 100px 100px;
   box-sizing: border-box;
 }
+.datailWrap img {
+  box-shadow: -5px -5px white;
+}
 
 .movieCate {
   color: white;
@@ -239,7 +242,7 @@ body {
   display: flex;
 }
 .detailWrap > div div h1 {
-  font-size: 4vh;
+  font-size: 3.5vh;
   line-height: 2.5em;
 }
 .detailWrap > div div:last-child {
