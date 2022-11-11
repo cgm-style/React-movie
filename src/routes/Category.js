@@ -14,13 +14,13 @@ function Category() {
     if (cateType === undefined) {
       json = await (
         await fetch(
-          `https://yts.mx/api/v2/list_movies.json?minimum_rating=${minimum_rating}&sort_by=year`
+          `https://yts.mx/api/v2/list_movies.json?minimum_rating=${minimum_rating}&sort_by=like_count`
         )
       ).json();
     } else {
       json = await (
         await fetch(
-          `https://yts.mx/api/v2/list_movies.json?minimum_rating=${minimum_rating}&sort_by=year&genre=${cateType}`
+          `https://yts.mx/api/v2/list_movies.json?minimum_rating=${minimum_rating}&sort_by=like_count&genre=${cateType}`
         )
       ).json();
     }
@@ -61,7 +61,10 @@ function Category() {
     <div className={"detailWrap"}>
       <Header />
       {loading ? (
-        <h1>loading</h1>
+        <div>
+          <div className={"loadingAnimation"}></div>
+          <h2 className={"loading"}>Loading!~</h2>
+        </div>
       ) : (
         <div className={"cateWrap"}>
           <h1>- {cateTitle} -</h1>
