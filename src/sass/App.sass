@@ -14,7 +14,17 @@ body
     color: $color
 
 .headerWrap
+    position: fixed
     display: flex
+    padding: 50px 0 50px 50px
+    box-shadow: 0px 10px 10px
+    background: maroon
+    transition: all 0.5s
+    width: 100%
+    top: 0px
+    z-index: 10
+    &:hover
+        background: indianred
 .headerTitle
     width: auto
     margin: 0 50px
@@ -31,13 +41,17 @@ body
         &:hover
             color: firebrick
 
+.mainWrap
+    margin-top: 250px
+
 .movieContainer
     width: 1480px
     margin: 60px auto
     overflow: hidden
 .movieWrap
     background: #4D0703
-    padding-top: 50px
+    box-sizing: border-box
+    background: #4D0703
     h2
         text-align: center
         color: white
@@ -166,10 +180,6 @@ body
                     top: 100px
                     left: 50px
                     right: 50px
-.movieWrap
-    padding: 50px
-    box-sizing: border-box
-    background: #4D0703
 
 .slideDot
     position: absolute
