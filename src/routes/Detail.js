@@ -23,18 +23,18 @@ function Detail() {
       {loading ? (
         <div>
           <div className={"loadingAnimation"}></div>
-          <h2 className={"loading"}>Loading!~</h2>
+          <h2 className={"loading"}>Loading</h2>
         </div>
       ) : (
         <div key={selectMovie.id} className={"datailWrap"}>
           <div>
-            <h1>{selectMovie.title}</h1>
             <img
               src={`${selectMovie.large_cover_image}`}
               alt={`${selectMovie.description_full}`}
             />
           </div>
           <div>
+            <h1>{selectMovie.title}</h1>
             <h2>{selectMovie.description_full}</h2>
           </div>
         </div>

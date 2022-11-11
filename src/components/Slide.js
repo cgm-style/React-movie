@@ -72,7 +72,7 @@ function nextEvent(e) {
 function Slide({ slide, title }) {
   return (
     <div className={"movieContainer"}>
-      <p className={"movieCate"}>-{title}-</p>
+      <p className={"movieCate"}>{title}</p>
       <div className={"slideWrap"}>
         {slide.map((movie) => (
           <Movie

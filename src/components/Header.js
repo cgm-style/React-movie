@@ -8,19 +8,19 @@ function Header() {
       </Link>
       <ul className={"nav"}>
         <Link to={`/MovieCate/highMovies`}>
-          <li key="nav1">-highMovies-</li>
+          <li key="nav1">highMovies</li>
         </Link>
         <Link to={`/MovieCate/middleMovies`}>
-          <li key="nav2">-middleMovies-</li>
+          <li key="nav2">middleMovies</li>
         </Link>
         <Link to={`/MovieCate/lowMovies`}>
-          <li key="nav3">-lowMovies-</li>
+          <li key="nav3">lowMovies</li>
         </Link>
         <Link to={`/MovieCate/animeMovies`}>
-          <li key="nav4">-animeMovies-</li>
+          <li key="nav4">animeMovies</li>
         </Link>
         <Link to={`/MovieCate/fantasyMovies`}>
-          <li key="nav4">-fantasyMovies-</li>
+          <li key="nav4">fantasyMovies</li>
         </Link>
       </ul>
     </div>

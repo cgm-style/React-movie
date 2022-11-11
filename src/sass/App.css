@@ -108,7 +108,7 @@ body {
   flex-wrap: wrap;
   width: 3700px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   text-align: center;
   transition: all 0.5s;
   transform: translateX(0px);
@@ -203,12 +203,13 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  padding: 200px 100px 100px 100px;
+  padding: 275px 100px 100px 100px;
   box-sizing: border-box;
   background-image: linear-gradient(90deg, #874da2 0%, #c43a30 100%);
 }
 .datailWrap img {
   box-shadow: -5px -5px white;
+  width: 350px;
 }
 
 .movieCate {
@@ -247,11 +248,13 @@ body {
   display: flex;
 }
 .detailWrap > div div h1 {
-  font-size: 3.5vh;
+  font-size: 6.5vh;
   line-height: 2.5em;
 }
+.detailWrap > div div h2 {
+  width: 60%;
+}
 .detailWrap > div div:last-child {
-  padding-top: 100px;
   padding-left: 50px;
   padding-right: 50px;
 }

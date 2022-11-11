@@ -59,7 +59,7 @@ function Home() {
       {loading ? (
         <div>
           <div className={"loadingAnimation"}></div>
-          <h2 className={"loading"}>Loading!~</h2>
+          <h2 className={"loading"}>Loading</h2>
         </div>
       ) : (
         <div className={`mainWrap`}>
