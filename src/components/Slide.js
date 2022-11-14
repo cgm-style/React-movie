@@ -26,15 +26,14 @@ function prevEvent(e) {
   translateValue = -target.style.transform.replace(/[^0-9]/g, ""); // 현재의 translate 값 받아오기
   translateValue += slideItemWidth; // 현재의 translate값에 item의 width값 더해주기
   counter -= 1; // 슬라이드 카운팅
-
-  target.style.transform = `translate(${translateValue}px)`; // 슬라이드 움직여 주는 부분
-
   if (counter <= 1) {
     // 슬라이드 이전버튼으로 1번째 슬라이드 이하가 되었을때 맨 우측 슬라이드로 이동
     translateValue = -slideItemWidth * 6;
     target.style.transform = `translate(-${slideItemWidth * 6}px)`;
     counter = 7;
+    return false;
   }
+  target.style.transform = `translate(${translateValue}px)`; // 슬라이드 움직여 주는 부분
 }
 function nextEvent(e) {
   // 슬라이드 다음 버튼
